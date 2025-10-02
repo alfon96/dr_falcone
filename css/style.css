@@ -1,0 +1,295 @@
+:root {
+  /* Primary identity */
+  --color-primary: #756589; /* Warm muted lavender-purple, calm and trustworthy */
+
+  /* Supporting neutrals (from the chair & light) */
+  --color-bg-light: #f8f6f2; /* Soft warm off-white, like curtain light */
+  --color-bg-warm: #f3eff9; /* Beige with warmth, closer to chair fabric */
+
+  /* Accent (natural and balanced) */
+  --color-accent: #7f9485; /* Muted sage green, softer and more organic */
+  --color-bg-accent: #9c8fb1; /* Very pale lavender for subtle section backgrounds */
+
+  /* Text (dark) */
+  --text-dark: #474542; /* Deep warm charcoal */
+  --text-dark-secondary: #585452; /* Softer warm gray for secondary text */
+
+  /* Text (light) */
+  --text-light: #f8f6f2; /* Light text on purple/dark backgrounds */
+  --text-light-secondary: #d6d0e0; /* Gentle lavender-gray for subtle text */
+
+  /* Utility */
+  --color-border: #e0d8ce; /* Warm neutral border */
+  --color-shadow: rgba(0, 0, 0, 0.06); /* Softer shadow for a calmer look */
+
+  /* Fonts */
+  --font-heading: Georgia, serif;
+  --font-body: "Lato", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg-warm);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7rem;
+
+  /* overflow-x: hidden; */
+}
+
+.hor-bar {
+  width: 90%;
+  margin: 3rem auto;
+  border: none;
+  border: 1px solid var(--color-bg-accent);
+}
+
+h1,
+h2 {
+  color: var(--color-primary);
+  line-height: 1.1;
+  font-family: var(--font-heading);
+}
+
+nav {
+  background: var(--color-bg-accent);
+  color: var(--text-light);
+  height: 2rem;
+  padding: 0.5rem 9rem;
+  display: flex;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.action-btn {
+  background-color: var(--color-primary);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  color: var(--text-light);
+  text-shadow: 0px 5px 10px #9c8fb117;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 2px 10px #9c8fb117;
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid #ffffff17;
+  border-color: var(--color-bg-accent);
+  font-size: 0.95rem;
+}
+
+.action-btn:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.hero-section {
+  max-width: 100vw;
+  height: 35rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/25.webp");
+  background-size: cover;
+  background-position: 0% 75%;
+  background-repeat: no-repeat;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.hero-cnt {
+  width: 90%;
+  top: 50%;
+  text-wrap: wrap;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  font-size: 2rem;
+  z-index: 99;
+  transform: translate(0, -50%);
+}
+
+.hero-cnt h1 {
+  color: var(--text-light);
+  text-shadow: 0px 5px 10px #9c8fb10c;
+}
+
+.quote-section {
+  text-align: center;
+  font-size: 1.25rem;
+  color: inherit;
+  padding: 5rem 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  font-style: italic;
+  margin: 3rem 0rem;
+}
+
+.quote-text {
+  font-family: "Merriweather", serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  max-width: 65ch;
+  margin: 0 auto;
+  color: inherit;
+}
+
+.quote-text::before {
+  content: "“";
+  font-size: 3rem;
+  vertical-align: top;
+  line-height: 0;
+  margin-right: 0.25rem;
+  color: var(--color-primary);
+}
+
+.quote-text::after {
+  content: "”";
+  font-size: 3rem;
+  vertical-align: bottom;
+  line-height: 0;
+  margin-left: 0.25rem;
+  color: var(--color-primary);
+}
+
+.quote-author {
+  font-family: "Italianno", serif;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  align-self: flex-end;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  align-items: flex-start;
+  text-align: left;
+  justify-content: stretch;
+  column-gap: 0;
+  row-gap: 4rem;
+  padding: 4rem 4rem;
+}
+
+.col1,
+.col2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 0rem 10%;
+  gap: 2rem;
+  color: var(--text-dark);
+}
+
+.teraphy-section {
+  display: flex;
+  color: var(--text-dark);
+  line-height: 1.6;
+  flex-direction: column;
+  padding: 0rem 0rem 2rem 0rem;
+}
+
+.unordered-list {
+  padding: 1rem 0rem 0rem 2rem;
+  color: var(--text-dark);
+}
+
+.teraphy-text {
+  color: inherit;
+}
+
+.about-section {
+  line-height: 1.6;
+  display: flex;
+
+  color: var(--text-dark);
+  flex-direction: column;
+}
+
+.about-text {
+  color: inherit;
+}
+
+.position-section {
+  width: 100%;
+
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--text-dark);
+  flex-direction: column;
+}
+
+.position-text {
+  color: inherit;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 35rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.025);
+  border: 1px solid var(--color-bg-warm);
+  margin-top: 2rem;
+  align-self: center;
+  border-radius: 0.25rem;
+}
+
+/* Make iframe responsive */
+.map-container iframe {
+  max-width: 35rem;
+  aspect-ratio: 4/3;
+  height: auto;
+  border: 0;
+}
+
+@media (max-width: 920px) {
+  .hero-title {
+    top: 70%;
+  }
+  .hero-title p {
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+  }
+}
+
+footer {
+  margin-top: 2rem;
+  background-color: var(--color-bg-accent);
+  padding: 3rem 10%;
+}
