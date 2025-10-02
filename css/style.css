@@ -194,10 +194,10 @@ nav a {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: flex-start;
   text-align: left;
-  justify-content: stretch;
+  justify-items: center;
   column-gap: 0;
   row-gap: 4rem;
   padding: 4rem 4rem;
