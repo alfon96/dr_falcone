@@ -1,6 +1,7 @@
 :root {
   /* Primary identity */
   --color-primary: #756589; /* Warm muted lavender-purple, calm and trustworthy */
+  --color-primary-darker: #6e5191; /* Warm muted lavender-purple, calm and trustworthy */
 
   /* Supporting neutrals (from the chair & light) */
   --color-bg-light: #f8f6f2; /* Soft warm off-white, like curtain light */
@@ -23,8 +24,8 @@
   --color-shadow: rgba(0, 0, 0, 0.06); /* Softer shadow for a calmer look */
 
   /* Fonts */
-  --font-heading: Georgia, serif;
-  --font-body: "Lato", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: serif;
+  --font-body: sans-serif;
 }
 
 * {
@@ -37,7 +38,7 @@ body {
   color: var(--text-dark);
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.7rem;
+  line-height: 1.8rem;
 
   /* overflow-x: hidden; */
 }
@@ -51,7 +52,7 @@ body {
 
 h1,
 h2 {
-  color: var(--color-primary);
+  color: var(--color-primary-darker);
   line-height: 1.1;
   font-family: var(--font-heading);
 }
@@ -225,6 +226,12 @@ nav a {
 .unordered-list {
   padding: 1rem 0rem 0rem 2rem;
   color: var(--text-dark);
+  line-height: 1.85rem;
+}
+
+.unordered-list ul {
+  padding-top: 0.25rem;
+  margin-left: 1.5em;
 }
 
 .teraphy-text {
@@ -242,7 +249,10 @@ nav a {
 .about-text {
   color: inherit;
 }
-
+.expert-in-text {
+  color: inherit;
+  font-style: italic;
+}
 .position-section {
   width: 100%;
 
