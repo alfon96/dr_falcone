@@ -1,7 +1,6 @@
 :root {
   /* Primary identity */
-  --color-primary: #756589; /* Warm muted lavender-purple, calm and trustworthy */
-  --color-primary-darker: #6e5191; /* Warm muted lavender-purple, calm and trustworthy */
+  --color-primary: #6e5191; /* Warm muted lavender-purple, calm and trustworthy */
 
   /* Supporting neutrals (from the chair & light) */
   --color-bg-light: #f8f6f2; /* Soft warm off-white, like curtain light */
@@ -13,14 +12,17 @@
 
   /* Text (dark) */
   --text-dark: #474542; /* Deep warm charcoal */
+  --text-darker: #35332e; /* Deep warm charcoal */
   --text-dark-secondary: #585452; /* Softer warm gray for secondary text */
 
   /* Text (light) */
   --text-light: #f8f6f2; /* Light text on purple/dark backgrounds */
+  --text-lighter: #fdfaf5; /* Light text on purple/dark backgrounds */
   --text-light-secondary: #d6d0e0; /* Gentle lavender-gray for subtle text */
 
   /* Utility */
-  --color-border: #e0d8ce; /* Warm neutral border */
+  --color-border-dark: #2013303a;
+  --color-border: #6e5191; /* Darker border */
   --color-shadow: rgba(0, 0, 0, 0.06); /* Softer shadow for a calmer look */
 
   /* Fonts */
@@ -35,13 +37,18 @@
 
 .soft-strong {
   font-style: italic;
-  color: var(--color-primary-darker);
+  color: var(--color-primary);
 }
 
 body {
   background: var(--color-bg-warm);
   color: var(--text-dark);
   font-family: var(--font-body);
+
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
   font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 1.8rem;
 
@@ -60,6 +67,17 @@ h2 {
   color: var(--color-primary);
   line-height: 1.1;
   font-family: var(--font-heading);
+
+  font-family: "DM Sans", sans-serif;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: clamp(3rem, 6vw, 4rem);
+  color: var(--color-bg-warm);
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
@@ -67,9 +85,9 @@ h2 {
 }
 
 nav {
-  background: var(--color-bg-accent);
+  background: var(--color-primary);
   color: var(--text-light);
-  height: 2rem;
+  height: 2.5rem;
   padding: 0.5rem 9rem;
   display: flex;
   text-align: center;
@@ -82,6 +100,9 @@ nav {
 nav a {
   text-decoration: none;
   color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.432);
+  padding: 0rem 1rem;
+  border-radius: 6px;
 }
 
 .action-btn {
@@ -91,16 +112,22 @@ nav a {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  gap: 1rem;
-  color: var(--text-light);
-  text-shadow: 0px 5px 10px #9c8fb117;
-  padding: 0.5rem 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0px 0px 2px 10px #9c8fb117;
+  gap: 0.75rem;
+  color: var(--text-lighter);
+  text-shadow: 0px 2px 5px black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.95rem;
+  box-shadow: 0px 0px 2px 4px #9c8fb113;
   transition: transform 0.2s ease-in-out;
-  border: 1px solid #ffffff17;
-  border-color: var(--color-bg-accent);
-  font-size: 0.95rem;
+  border: 1px solid var(--color-border-dark);
+  font-size: 1rem;
+  position: relative;
+}
+
+.btn-text {
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .action-btn:hover {
@@ -128,7 +155,7 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
@@ -148,9 +175,8 @@ nav a {
   transform: translate(0, -50%);
 }
 
-.hero-cnt h1 {
-  color: var(--text-light);
-  text-shadow: 0px 5px 10px #9c8fb10c;
+.hero-link {
+  text-decoration: none;
 }
 
 .quote-section {
@@ -168,11 +194,10 @@ nav a {
 }
 
 .quote-text {
-  font-family: "Merriweather", serif;
   font-style: italic;
-  font-size: clamp(1.1rem, 2vw, 1.2rem);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   line-height: 1.7;
-  max-width: 65ch;
+  max-width: clamp(46ch, 80%, 85ch);
   margin: 0 auto;
   color: inherit;
 }
@@ -197,7 +222,7 @@ nav a {
 
 .quote-author {
   font-family: "Italianno", serif;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
 
   color: var(--color-primary);
   align-self: flex-end;
@@ -291,12 +316,12 @@ nav a {
   border: 1px solid var(--color-bg-warm);
   margin-top: 2rem;
   align-self: center;
+  justify-self: center;
   border-radius: 0.25rem;
 }
 
-/* Make iframe responsive */
 .map-container iframe {
-  max-width: 35rem;
+  max-width: 40rem;
   aspect-ratio: 4/3;
   height: auto;
   border: 0;
@@ -314,7 +339,11 @@ nav a {
 }
 
 footer {
-  margin-top: 2rem;
+  margin-top: 6.5rem;
   background-color: var(--color-bg-accent);
   padding: 3rem 10%;
+  color: var(--text-darker);
+  font-style: italic;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
 }
